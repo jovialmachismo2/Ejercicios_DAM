@@ -26,6 +26,7 @@ public class practica_3 {
         if (altura < 0 || altura > 230) {
 
             System.out.println("ERROR DE LECTURA. BAJA DE LA BASCULA Y VUELEVE A SUBIR...");
+            return;
 
         }
         //if por si es menor q 140
