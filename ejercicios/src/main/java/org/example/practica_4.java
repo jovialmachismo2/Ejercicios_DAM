@@ -4,29 +4,73 @@ import java.util.Scanner;
 public class practica_4 {
 
     static void main() {
-
+        int num = 0, num2 = 0;
+        boolean funcion = true;
         Scanner teclado = new Scanner(System.in);
+        do {
+            try {
+                System.out.println("Intruduce el muliplicando 1: ");
 
-        System.out.println("Intruduce el muliplicando: ");
+                num = teclado.nextInt();
 
-        int num = teclado.nextInt();
+                funcion = false;
+                if (num > 999){
+                    funcion=true;
+                    System.out.println("Solo puedes escribir un numero de tres cifras");
 
-        String numC = Integer.toString(num);
-        String numC_1 = numC.substring(0,1);
-        String numC_2 = numC.substring(1,2);
-        String numC_3 = numC.substring(2,3);
-        int num_1 = Integer.parseInt(numC_1);
-        int num_2 = Integer.parseInt(numC_2);
-        int num_3 = Integer.parseInt(numC_3);
+                }
+                if (num < 100 & num >= 0 || num < -999){
+                    funcion=true;
+                    System.out.println("Solo puedes escribir un numero de tres cifras");
+                }
+            }catch (Exception e){
 
-        System.out.println("Intruduce el muliplicando: ");
+                funcion=true;
+                System.out.println("Formato incorrecto");
+            }
 
-        int num2 = teclado.nextInt();
+        }while (funcion);
+
+        do {
+            try {
+                System.out.println("Intruduce el muliplicando 2: ");
+
+                num2 = teclado.nextInt();
+
+                funcion = false;
+
+                if (num2 > 999){
+                    funcion=true;
+                    System.out.println("Solo puedes escribir un numero de tres cifras");
+                }
+                if (num2 < 100 & num2 >= 0 || num2 < -999){
+                    funcion=true;
+                    System.out.println("Solo puedes escribir un numero de tres cifras");
+                }
+            }catch (Exception e){
+
+                funcion=true;
+                System.out.println("Formato incorrecto");
+            }
+
+        }while (funcion);
 
         String numB = Integer.toString(num2);
         String numB_1 = numB.substring(0,1);
         String numB_2 = numB.substring(1,2);
         String numB_3 = numB.substring(2,3);
+
+
+        if (num2 < 0){
+
+            numB = Integer.toString(num2);
+            numB_1 = numB.substring(1,2);
+            numB_2 = numB.substring(2,3);
+            numB_3 = numB.substring(3,4);
+
+        }
+
+
         int num_6 = Integer.parseInt(numB_1);
         int num_7 = Integer.parseInt(numB_2);
         int num_8 = Integer.parseInt(numB_3);
