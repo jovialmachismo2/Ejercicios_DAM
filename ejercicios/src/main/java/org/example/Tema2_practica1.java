@@ -22,9 +22,6 @@ public class Tema2_practica1 {
             System.out.println("es muy cortito");
             return;
 
-        } else if (fecha.charAt(2) != '/' || fecha.charAt(5) != '/') { // si el usuario en la fecha no puso / o en la pocision que tiene que ir, le dira formato incorrecto
-            System.out.println("Formato de barra incorrecto");
-            return;
         }
 
         String dia = fecha.substring(0, 2); //agarra el dia que nacio el usuario
@@ -42,6 +39,9 @@ public class Tema2_practica1 {
             if (dia_int > dia_max || mes_int > mes_max || anio_int > anio_max || dia_int < 1 || mes_int < 1 || anio_int < 1900) { //si el dia, mes o anio son incorrectos muestra error
                 System.out.println("formato introducido es icorrecto");
                 funcion = false; //si hay error ponemos funcion en falso
+            }else if (fecha.charAt(2) != '/' || fecha.charAt(5) != '/') { // si el usuario en la fecha no puso / o en la pocision que tiene que ir, le dira formato incorrecto
+                System.out.println("Formato de barra incorrecto");
+                funcion = false;
             }
 
         } catch (Exception e) { //si el usuario pone letras o algo mal entra aqui
