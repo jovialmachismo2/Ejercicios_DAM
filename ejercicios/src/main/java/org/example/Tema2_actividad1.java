@@ -1,5 +1,6 @@
 package org.example;
 
+import java.lang.classfile.instruction.SwitchCase;
 import java.time.LocalDateTime;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -28,35 +29,40 @@ public class Tema2_actividad1 {
         }
 
         if (seguir) {
-            if (modo == 1) {
-                System.out.println("Introduce tu año de nacimiento");
-                String anyo_nacimiento = teclado.next();
 
-                try {
-                    anyo_nacimiento_int = Integer.parseInt(anyo_nacimiento);
-                } catch (NumberFormatException e) {
-                    System.out.println("El formato no es numerico");
-                    return;
-                }
-            } else if (modo == 2) {
-                int edad = 0;
-                System.out.println("Introduce la edad");
-                if (teclado.hasNextInt()) {
-                    edad = teclado.nextInt();
-                } else {
-                    System.out.println("La edad no tiene formato correcto(numerico)");
-                    return;
-                }
-                if (edad >= 0) {
-                    anyo_nacimiento_int = anyo_actual - edad;
-                } else {
-                    System.out.println("la edad no es correcta");
-                }
-            } else {
-                System.out.println("El modo introducido es incorrecto");
-                return;
+            switch (modo){
+                case 1:
+                    System.out.println("Introduce tu año de nacimiento");
+                    String anyo_nacimiento = teclado.next();
 
+                    try {
+                        anyo_nacimiento_int = Integer.parseInt(anyo_nacimiento);
+                    } catch (NumberFormatException e) {
+                        System.out.println("El formato no es numerico");
+                        return;
+                    }
+                    break;
+                case 2:
+                    int edad = 0;
+                    System.out.println("Introduce la edad");
+                    if (teclado.hasNextInt()) {
+                        edad = teclado.nextInt();
+                    } else {
+                        System.out.println("La edad no tiene formato correcto(numerico)");
+                        return;
+                    }
+                    if (edad >= 0) {
+                        anyo_nacimiento_int = anyo_actual - edad;
+                    } else {
+                        System.out.println("la edad no es correcta");
+                        return;
+                    }
+                    break;
+                default:
+                    System.out.println("El modo introducido no es el correcto");
+                    break;
             }
+
             if (anyo_nacimiento_int >= anyo_minimo && anyo_nacimiento_int <= anyo_actual) {
 
                 if (anyo_nacimiento_int <= 1927) {
