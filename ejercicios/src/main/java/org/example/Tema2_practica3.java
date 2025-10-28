@@ -11,7 +11,7 @@ public class Tema2_practica3 {
         int total = 0; //acumula la suma total del cálculo del ISBN
         int dudas = 0; //contará cuántos signos de '?' hay en el ISBN
         int posicionDuda = 0; //guardará la posición donde está el signo '?'
-        int pesoDuda = 0; //guardará el peso correspondiente al signo '?'
+        int valor_poscicion = 0; //guardará el valor correspondiente al signo '?'
         String isbn = ""; //guardará el número ISBN que escriba el usuario
         int valor = 0; //guardará el valor que sustituye el '?'
 
@@ -29,23 +29,22 @@ public class Tema2_practica3 {
         //si el usuario eligió 1 o 2, le pedimos que introduzca el ISBN
         if (menu.equals("1") || menu.equals("2")) {
             System.out.println("Introduce el ISBN: ");
-            isbn = teclado.next(); //guardamos el ISBN que puso el usuario
-        }
+            isbn = teclado.next();
+            if (isbn.length() != 10) {
+                System.out.println("ISBN NO TIENE 10 CIFRAS");
+                return;
+            }
 
-        int largo = isbn.length(); //guardamos la cantidad de caracteres del ISBN
-
-        if (largo == 10) { //si el ISBN tiene 10 caracteres, seguimos
-
-            //bucle que recorre todos los caracteres del ISBN uno por uno
             for (int i = 0; i < 10; i++) {
                 char character = isbn.toLowerCase().charAt(i); //guardamos el carácter actual (convertido a minúscula)
 
                 if (i == 9 && character == 'x') { //si el último carácter es una 'x', vale por 10
                     resultado = contador * 10;
+                    total += resultado;
                 } else if (character == '?') { //si hay un signo de pregunta
                     dudas++; //aumentamos el contador de dudas
                     posicionDuda = i; //guardamos la posición donde está '?'
-                    pesoDuda = contador; //guardamos el peso (valor del contador)
+                    valor_poscicion = contador; //guardamos el peso (valor del contador)
                 } else {
                     try {
                         int num = Integer.parseInt(String.valueOf(isbn.charAt(i))); //convertimos el carácter a número
@@ -59,9 +58,11 @@ public class Tema2_practica3 {
                     }
                 }
 
-                //IMPORTANTE: falta aquí reducir el contador en 1 por cada iteración (contador--),
-                //pero el programa sigue el patrón que tú usaste.
+                contador--;
             }
+
+        }
+            //bucle que recorre todos los caracteres del ISBN uno por uno
 
             //según lo que eligió el usuario, hacemos una cosa u otra
             switch (menu) {
@@ -92,7 +93,7 @@ public class Tema2_practica3 {
                     //probamos valores del 0 al 10 para ver cuál hace que el ISBN sea válido
                     for (int candidato = 0; candidato <= 10; candidato++) {
                         if (posicionDuda != 9 && candidato == 10) continue; //solo el último puede ser X (10)
-                        int prueba = total + candidato * pesoDuda; //hacemos la prueba con el número candidato
+                        int prueba = total + candidato * valor_poscicion; //hacemos la prueba con el número candidato
                         if (prueba % 11 == 0) { //si es múltiplo de 11, encontramos el correcto
                             encontrado = true;
                             valor = candidato;
@@ -104,10 +105,10 @@ public class Tema2_practica3 {
                         String reparado;
                         if (posicionDuda == 9 && valor == 10) { //si la última posición es una X
                             System.out.println("El número para reparar el ISBN es X (10)");
-                            reparado = isbn.substring(0, posicionDuda) + "X" + isbn.substring(posicionDuda+1); //reemplazamos por X
+                            reparado = isbn.substring(0, posicionDuda) + "X" + isbn.substring(posicionDuda + 1); //reemplazamos por X
                         } else {
                             System.out.println("El número para reparar el ISBN es " + valor);
-                            reparado = isbn.substring(0, posicionDuda) + valor + isbn.substring(posicionDuda+1); //reemplazamos el '?' por el número encontrado
+                            reparado = isbn.substring(0, posicionDuda) + valor + isbn.substring(posicionDuda + 1); //reemplazamos el '?' por el número encontrado
                         }
                         System.out.println("ISBN reparado: " + reparado); //mostramos el ISBN ya corregido
                     } else {
@@ -120,10 +121,7 @@ public class Tema2_practica3 {
                     break; //no hacemos nada, el programa termina
 
                 default: //si la opción no existe
-                    System.out.println("Opción no contemplada.");
+                    System.out.println("Opción no valida.");
             }
-        } else { //si el ISBN no tiene 10 caracteres
-            System.out.println("ISBN NO TIENE 10 CIFRAS"); //mostramos mensaje de error
         }
     }
-}
