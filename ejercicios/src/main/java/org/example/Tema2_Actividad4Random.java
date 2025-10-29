@@ -14,7 +14,7 @@ public class Tema2_Actividad4Random {
         for (int i=0;i<bucle;i++){
             contrasenya += caracteres.charAt(aleatorio.nextInt(caracteres.length()-1));
             for (int a = 0; a < 4; a++){
-                
+
             }
 
         }
