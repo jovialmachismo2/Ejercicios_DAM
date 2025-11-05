@@ -18,7 +18,7 @@ public class Tema2_bateria1 {
         int mitad_long = longitud / 2;
         String mitad1 = frase.substring(1, mitad_long);
         String mitad2 = frase.substring(mitad_long, longitud);
-        System.out.println("La primera mitad es " + mitad1 + " y la segunda mitad es " + mitad2);
+        System.out.println("La primera mitad es " + mitad1 + "y la segunda mitad es " + mitad2);
         String mayusculas = frase.toUpperCase();
         System.out.println(mayusculas);
 

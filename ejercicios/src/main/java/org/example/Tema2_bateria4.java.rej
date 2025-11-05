@@ -1,0 +1,9 @@
+diff a/ejercicios/src/main/java/org/example/Tema2_bateria4.java b/ejercicios/src/main/java/org/example/Tema2_bateria4.java	(rejected hunks)
+@@ -12,7 +12,6 @@
+         int resta = texto_tamanyio - conteo;
+         int resultado = resta / palabra_tamanyo;
+         System.out.println(resultado);
+-        System.out.println(conteo);
+ 
+     }
+ }

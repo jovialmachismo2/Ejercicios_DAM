@@ -12,6 +12,7 @@ public class Tema2_bateria4 {
         int resta = texto_tamanyio - conteo;
         int resultado = resta / palabra_tamanyo;
         System.out.println(resultado);
+        System.out.println(conteo);
 
     }
 }
