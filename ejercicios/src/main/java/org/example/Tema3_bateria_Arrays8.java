@@ -18,7 +18,7 @@ public class Tema3_bateria_Arrays8 {
                 vector2[pos] = num;
             } else if (i > pos) {
                 vector2[i] = vector[i-1];
-                
+
             } else {
                 vector2[i] = vector[i];
             }

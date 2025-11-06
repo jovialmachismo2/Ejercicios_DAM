@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class Tema3_bateria_Arrays7 {
     static void main() {
-        int[] vector = {1, 2, 3,4};
-        int[] vector2 = {4, 5, 6,7};
+        int[] vector = {1, 2, 3,4,5};
+        int[] vector2 = {4, 5, 6,7,8};
         int[] filtrado = new int[vector.length+ vector2.length];
         int i = 0;
 
