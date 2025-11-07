@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class Tema3_Practica1 {
     static void main() {
+        pepe:
+
         Random aleatorio = new Random();
         Scanner teclado = new Scanner(System.in);
         boolean funcion  = true;
@@ -43,11 +45,13 @@ public class Tema3_Practica1 {
 
                     suma2 = suma2+num;
                     System.out.println(num);
+                    continue pepe;
                 }
 
                 if (suma2 != 30){
                     System.out.println("ERROR: LA POTENCIA TOTAL NO ES 30");
                     return;
+
                 }
                 int pos = aleatorio.nextInt(0,8);
 
