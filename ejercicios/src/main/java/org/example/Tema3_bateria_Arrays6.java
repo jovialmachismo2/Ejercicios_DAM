@@ -17,7 +17,6 @@ public class Tema3_bateria_Arrays6 {
 
             filtrado2[i] = vector[vector.length-1 -i];
 
-
         }
 
         System.out.println(Arrays.toString(filtrado));
