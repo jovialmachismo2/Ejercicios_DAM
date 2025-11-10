@@ -6,8 +6,6 @@ import java.util.Scanner;
 
 public class Tema3_Practica1 {
     static void main() {
-        pepe:
-
         Random aleatorio = new Random();
         Scanner teclado = new Scanner(System.in);
         boolean funcion  = true;
@@ -18,34 +16,33 @@ public class Tema3_Practica1 {
 
         System.out.println("Bienvenido a la batalla de samurais🤺🤺");
 
-                System.out.println("Introduce el equipo 1");
-                String usuario1 = teclado.nextLine();
-                String equipo1[] = usuario1.split(" ");
+            System.out.println("Introduce el equipo 1");
+            String usuario1 = teclado.nextLine();
+            String equipo1[] = usuario1.split(" ");
 
-                for (int i = 0;i< equipo1.length;i++){
-                    int num = Integer.parseInt(equipo1[i]);
+            for (int i = 0; i < equipo1.length; i++) {
+                int num = Integer.parseInt(equipo1[i]);
 
-                    suma1 = suma1+num;
-                    System.out.println(num);
-                }
+                suma1 = suma1 + num;
+                System.out.println(num);
+            }
 
-                if (suma1 != 30){
-                    System.out.println("ERROR: LA POTENCIA TOTAL NO ES 30");
-                    return;
-                }
+            if (suma1 != 30) {
+                System.out.println("ERROR: LA POTENCIA TOTAL NO ES 30");
+                return;
+            }
 
-                System.out.println(Arrays.toString(equipo1));
+            System.out.println(Arrays.toString(equipo1));
 
-                System.out.println("Intrpduce el equipo 2");
-                String usuario2 = teclado.nextLine();
-                String equipo2[] = usuario2.split(" ");
+            System.out.println("Intrpduce el equipo 2");
+            String usuario2 = teclado.nextLine();
+            String equipo2[] = usuario2.split(" ");
 
                 for (int i = 0;i< equipo2.length;i++){
                     int num = Integer.parseInt(equipo2[i]);
 
                     suma2 = suma2+num;
                     System.out.println(num);
-                    continue pepe;
                 }
 
                 if (suma2 != 30){
