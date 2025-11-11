@@ -56,8 +56,8 @@ public class Tema3_Practica1 {
                 suma = suma + num;
 
                 // Validación de rango de cada potencia
-                if (num < 0 || num > 24) {
-                    System.out.println("Tiene que ser un numero del 0 al 24");
+                if (num < 1 || num > 24) {
+                    System.out.println("Tiene que ser un numero del 1 al 24");
                     suma = 0;              // resetea la suma
                     numeroValido = false;  // marca que hubo un número fuera de rango
                     break;                 // sale del for de validación
@@ -90,14 +90,12 @@ public class Tema3_Practica1 {
 
         } while (seguirPidiendo);
 
-        // --- BLOQUE DE COMBATE ---
-
-        // Elige al azar con qué samurái (índice) empieza (0..6). nextInt(0,7) -> [0,6]
+        // Elige al azar con qué samurái empieza (0..6)
         int pos = aleatorio.nextInt(0, 7);
 
         System.out.println("La batalla inicia con el Samurai " + (pos + 1) + ".");
 
-        // Recorre desde 'pos' hasta el final (pos, pos+1, ..., 6)
+        // Recorre desde 'pos' hasta el final
         for (int i = pos; i < equipo1.length; i++) {
             int num1 = Integer.parseInt(equipo1[i]);
             int num2 = Integer.parseInt(equipo2[i]);
@@ -114,7 +112,7 @@ public class Tema3_Practica1 {
             System.out.println();
         }
 
-        // …y luego desde 0 hasta pos-1 (para completar la vuelta circular)
+        // …y luego desde 0 hasta pos (para completar la vuelta)
         for (int i = 0; i < pos; i++) {
             int num1 = Integer.parseInt(equipo1[i]);
             int num2 = Integer.parseInt(equipo2[i]);
@@ -131,9 +129,9 @@ public class Tema3_Practica1 {
             System.out.println();
         }
 
-        // Resultado final (en tu lógica, “bajas” del rival = rondas ganadas por el ganador)
+        // Resultado final
         if (rondasGanadasEquipo1 < rondasGanadasEquipo2) {
-            System.out.println("Gana equipo dos, equipo 1 ha tenido " + rondasGanadasEquipo2);
+            System.out.println("Gana equipo dos, equipo 1 ha tenido " + rondasGanadasEquipo2 + " bajas");
         } else if (rondasGanadasEquipo1 > rondasGanadasEquipo2) {
             System.out.println("Gana equipo 1, equipo 2 ha tenido " + rondasGanadasEquipo1 + " bajas");
         } else {
