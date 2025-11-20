@@ -23,7 +23,7 @@ public class Tema3_Ejercicio_Matriz3 {
         for (int numerosB[] : B ){
             System.out.println(Arrays.toString(numerosB));
         }
-        System.out.println(  );
+        System.out.println();
         for (int numerosA[] : A ){
             System.out.println(Arrays.toString(numerosA));
         }
