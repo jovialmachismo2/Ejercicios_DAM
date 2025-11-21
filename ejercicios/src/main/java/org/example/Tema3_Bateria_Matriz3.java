@@ -40,6 +40,23 @@ public class Tema3_Bateria_Matriz3 {
             }
             System.out.println();
         }
+        int suma_notas = 0;
+        for (int i = 1; i < notas.length; i++) {
+            suma_notas=0;
+            for (int j = 1; j < notas[i].length; j++) {
+
+                suma_notas += Integer.parseInt(notas[i][j]);
+            }
+            System.out.println("La nota media del alumno " + notas[i][0] + " es " + (double) (suma_notas/asignaturas));
+        }
+
+        for (int i = 1; i < notas[0].length; i++) {
+            suma_notas=0;
+            for (int j = 1; j < notas.length; j++) {
+                suma_notas += Integer.parseInt(notas[j][i]);
+            }
+            System.out.println("La nota media de la asignatura de " + notas[0][i] + " es " + (double) (suma_notas/alumnos));
+        }
 
     }
 }
