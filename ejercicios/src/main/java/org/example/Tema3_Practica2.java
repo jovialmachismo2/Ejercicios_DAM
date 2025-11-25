@@ -66,6 +66,7 @@ public class Tema3_Practica2 {
 
                     System.out.println("El numero que introduciste no es el indicado");
                     return; // Terminamos el programa si hay un número fuera de rango
+
                 }
 
                 // Segundo bucle para comprobar que el usuario NO repite números
@@ -112,7 +113,6 @@ public class Tema3_Practica2 {
                         }
                     }
                 }
-
             } while (repite); // Si había repetidos, volvemos a generar las 7 bolas
 
             System.out.println();

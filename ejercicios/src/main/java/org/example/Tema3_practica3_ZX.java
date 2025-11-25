@@ -8,7 +8,7 @@ public class Tema3_practica3_ZX {
     static void main() {
         int alto = 0;
         Scanner teclado = new Scanner(System.in);
-        String letra = "";
+
         System.out.println("Introduce la resolucion de tu pantalla (ancho / alto)");
         System.out.println("Ancho:");
         int ancho = teclado.nextInt();
@@ -36,7 +36,7 @@ public class Tema3_practica3_ZX {
                     }
 
                 }else {
-                    System.out.println("Has introducido un valor de pixel incorrecto (A-O)");
+                    System.out.println("Has introducido un valor de pixel incorrecto");
                     i--;
                 }
             }
@@ -46,8 +46,15 @@ public class Tema3_practica3_ZX {
             }
 
             for (int i = 0; i < matriz.length/2; i++) {
-                for (int j = 0; j < matriz[i].length/2; j++) {
-                    
+                for (int j = 0; j < matriz[i].length/2; j++){
+
+
+                }
+            }
+
+            for (int i = matriz.length/2; i < matriz.length ; i++) {
+                for (int j = matriz[i].length/2; j < matriz[i].length ; j++) {
+
                 }
             }
 
